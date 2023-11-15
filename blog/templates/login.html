@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} Register {% endblock %}
+
+{% block content %}
+        <form action="" method="post">
+            {{ form.csrf_token }}
+            {{ form.email.label(class='form-control-label') }} {{ form.email(class='form-control') }}
+            {{ form.password.label(class='form-control-label') }} {{ form.password(class='form-control') }}
+            {{ form.login_form(class='btn btn-info') }}
+        </form>
+{% endblock %}

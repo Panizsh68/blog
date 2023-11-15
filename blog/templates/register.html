@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Register {% endblock %}
+
+{% block content %}
+        <form action="" method="post">
+            {{ form.csrf_token }}
+            <div class="form-group">
+                {{ form.username.label(class='form-control-label') }}
+                {{ form.username(class='form-control' ~ (' is-invalid' if form.username.errors) ) }}
+                {% block error_username %} {% endblock %}
+
+                {{ form.email.label(class='form-control-label') }} 
+                {{ form.email(class='form-control' ~ (' is-invalid' if form.email.errors) ) }}
+                {% block error_email %} {% endblock %}
+
+                {{ form.password.label(class='form-control-label') }} 
+                {{ form.password(class='form-control' ~ (' is-invalid' if form.password.errors) ) }}
+                {% block error_password %} {% endblock %}
+
+                {{ form.confirm_password.label(class='form-control-label') }} 
+                {{ form.confirm_password(class='form-control' ~ (' is-invalid' if form.confirm_password.errors) ) }}
+                {% block error_confirm_password %} {% endblock %}
+
+                {{ form.submit_form(class='btn btn-info') }}
+            </div>
+        </form>
+        
+{% endblock %}
